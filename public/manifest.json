@@ -2,21 +2,17 @@
   "name": "Felanmälan Höganäs",
   "short_name": "Felanmälan",
   "description": "Rapportera fel på gator och parker i Höganäs kommun",
-  "start_url": "/",
+  "start_url": "/app/felanmalan-hoganas",
+  "scope": "/app/felanmalan-hoganas",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0066cc",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/app/felanmalan-hoganas/icon-192.svg",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg+xml"
     }
   ],
   "categories": ["government", "utilities"],

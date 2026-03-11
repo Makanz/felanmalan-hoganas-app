@@ -3,6 +3,8 @@ import NextPWA from 'next-pwa';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  basePath: '/app/felanmalan-hoganas',
+  assetPrefix: '/app/felanmalan-hoganas',
 };
 
 const withPWA = NextPWA({
@@ -10,6 +12,7 @@ const withPWA = NextPWA({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
+  scope: '/app/felanmalan-hoganas',
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/www\.dedu\.se\/.*$/i,
