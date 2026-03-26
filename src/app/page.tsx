@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import type { FormData } from '@/lib/formTypes';
 import { initialFormData } from '@/lib/formTypes';
 import { StepIndicator } from '@/components/ui';
@@ -75,10 +76,14 @@ export default function Home() {
         formDataImg.append('file', formData.image);
         formDataImg.append('uhid', uhId);
 
-        await fetch('/api/image', {
+        const imageResponse = await fetch('/api/image', {
           method: 'POST',
           body: formDataImg,
         });
+
+        if (!imageResponse.ok) {
+          toast.error('Bilduppladdning misslyckades, men ditt ärende är sparat.');
+        }
       }
 
       setTicketId(uhId);
@@ -104,6 +109,7 @@ export default function Home() {
           <h1 className="text-xl font-bold">Felanmälan Höganäs</h1>
         </div>
       </header>
+      <Toaster position="top-center" />
 
       <main className="max-w-lg mx-auto p-4">
         {step < 6 && (
